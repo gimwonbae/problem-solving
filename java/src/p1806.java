@@ -1,15 +1,18 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class p1806 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
         int[] arr = new int[n];
         int ans = Integer.MAX_VALUE;
 
+        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++){
-            arr[i] = sc.nextInt();
+            arr[i] = Integer.parseInt(st.nextToken());
         }
         for (int i = 0; i < n; i++){
             int sum = 0;
