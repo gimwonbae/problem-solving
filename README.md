@@ -1,3 +1,3 @@
-# Baekjoon Online Judge ps respository
+# Problem Solving respository
 [BOJ](https://www.acmicpc.net)    
 [My BOJ account](https://www.acmicpc.net/user/dnjsqo5)
