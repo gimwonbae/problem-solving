@@ -1,3 +1,4 @@
-# Problem Solving respository
-[BOJ](https://www.acmicpc.net)    
-[My BOJ account](https://www.acmicpc.net/user/dnjsqo5)
+# Problem Solving with Java
+- BOJ  
+- LeetCode  
+- Programmers  
