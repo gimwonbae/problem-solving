@@ -5,7 +5,6 @@ public class p21608 {
     static int N;
     static int[][] map;
     static int[][] like_list;
-    static int[] like = new int[4];
     static int[] dr = {-1, 1, 0, 0};
     static int[] dc = {0, 0, -1, 1};
 
@@ -21,9 +20,8 @@ public class p21608 {
             int number = Integer.parseInt(st.nextToken());
             for (int j = 0; j < 4; j++){
                 like_list[number][j] = Integer.parseInt(st.nextToken());
-                like[j] = like_list[number][j];
             }
-            Node node = calc_node();
+            Node node = calc_node(number);
             map[node.r][node.c] = number;
         }
         sol();
@@ -34,7 +32,7 @@ public class p21608 {
         for (int i = 0; i < N; i++){
             for (int j = 0; j < N; j++){
                 int num = map[i][j];
-                like = like_list[num];
+                int[] like = like_list[num];
                 for (int k = 0; k < 4; k++){
                     int newR = i + dr[k];
                     int newC = j + dc[k];
@@ -54,9 +52,10 @@ public class p21608 {
 
         System.out.println(ans);
     }
-    public static int[] calc_like(int r, int c){
+    public static int[] calc_like(int r, int c, int number){
         int likes = 0;
         int empty = 0;
+        int[] like = like_list[number];
         for (int i = 0; i < 4; i++){
             int newR = r + dr[i];
             int newC = c + dc[i];
@@ -69,12 +68,12 @@ public class p21608 {
         }
         return new int[]{likes, empty};
     }
-    public static Node calc_node(){
+    public static Node calc_node(int number){
         PriorityQueue<Node> pq = new PriorityQueue<>();
         for (int r = 0; r < N; r++){
             for (int c = 0; c < N; c++){
                 if (map[r][c] == 0){
-                    int[] ans = calc_like(r, c);
+                    int[] ans = calc_like(r, c, number);
                     int likes = ans[0];
                     int empty = ans[1];
                     pq.add(new Node(r, c, likes, empty));
