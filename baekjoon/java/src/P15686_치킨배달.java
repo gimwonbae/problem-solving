@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class p15686 {
+public class P15686_치킨배달 {
     static int m;
     static List<Point> chicken = new ArrayList<>();
     static List<Point> house = new ArrayList<>();

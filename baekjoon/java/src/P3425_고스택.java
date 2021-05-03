@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class p3425 {
+public class P3425_고스택 {
     static Stack<Long> goStack = new Stack();
     static List<Command> commands = new ArrayList<>();
 

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class p3055 {
+public class P3055_탈출 {
     static char[][] map;
     static int[] dr = {-1,1,0,0};
     static int[] dc = {0,0,-1,1};
