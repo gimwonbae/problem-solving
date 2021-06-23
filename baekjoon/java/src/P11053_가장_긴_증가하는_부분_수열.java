@@ -20,7 +20,6 @@ public class P11053_가장_긴_증가하는_부분_수열 {
                 if (x > y) dp[i] = Math.max(dp[j] + 1, dp[i]);
             }
         }
-        int max = 0;
         System.out.println(Arrays.stream(dp).max().getAsInt());
     }
 }
