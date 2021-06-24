@@ -1,10 +1,8 @@
 import java.util.*;
-import java.io.*;
 
-class Solution {
+class 위장 {
     public int solution(String[][] clothes) {
-        int answer = 0;
-        HashMap<String, List<String>> hm = new HashMap();
+        HashMap<String, List<String>> hm = new HashMap<>();
 
         for (String[] item : clothes){
             String key = item[1];
@@ -17,7 +15,7 @@ class Solution {
                 hm.put(key, arr);
             }
         }
-        answer = 1;
+        int answer = 1;
         for (String key : hm.keySet()){
             answer *= hm.get(key).size() + 1;
         }
