@@ -3,4 +3,6 @@ out/
 *.iml
 .classpath
 .project
+secret/
+forRun/
 codingtest/
