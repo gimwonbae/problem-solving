@@ -49,14 +49,17 @@ public class P4007_간담회_참석 {
 
         PriorityQueue<Edge> pq = new PriorityQueue<>();
         pq.add(new Edge(start, 0));
-        visited[start] = true;
 
-        while(!pq.isEmpty()){
+        while(!pq.isEmpty()) {
             int current = pq.poll().vertex;
-            for (Edge next : graph.get(current)){
-                if (!visited[next.vertex] && distList[next.vertex] > distList[current] + next.dist){
+
+            if(visited[current]) continue;
+            visited[current] = true;
+
+            for (Edge next: graph.get(current)) {
+                if (distList[next.vertex] > distList[current] + next.dist) {
                     distList[next.vertex] = distList[current] + next.dist;
-                    pq.add(new Edge(next.vertex, next.dist));
+                    pq.add(new Edge(next.vertex, distList[next.vertex]));
                 }
             }
         }
