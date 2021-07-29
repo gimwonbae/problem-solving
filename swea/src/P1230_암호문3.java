@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class Solution
+class P1230_암호문3
 {
     public static void main(String args[]) throws Exception
     {
