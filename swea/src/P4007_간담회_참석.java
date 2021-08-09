@@ -5,8 +5,8 @@ public class P4007_간담회_참석 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        List<List<Edge>> graph1;
-        List<List<Edge>> graph2;
+        List<List<P4007_Edge>> graph1;
+        List<List<P4007_Edge>> graph2;
         StringBuilder sb = new StringBuilder();
 
         int T = Integer.parseInt(st.nextToken());
@@ -29,8 +29,8 @@ public class P4007_간담회_참석 {
                 int end = Integer.parseInt(st.nextToken());
                 int dist = Integer.parseInt(st.nextToken());
 
-                graph1.get(start).add(new Edge(end, dist));
-                graph2.get(end).add(new Edge(start, dist));
+                graph1.get(start).add(new P4007_Edge(end, dist));
+                graph2.get(end).add(new P4007_Edge(start, dist));
             }
             int[] distList1 = new int[N+1];
             int[] distList2 = new int[N+1];
@@ -42,13 +42,13 @@ public class P4007_간담회_참석 {
         System.out.println(sb);
     }
 
-    public static void dijkstra(List<List<Edge>> graph, int[] distList, int start){
+    public static void dijkstra(List<List<P4007_Edge>> graph, int[] distList, int start){
         boolean[] visited = new boolean[distList.length];
         Arrays.fill(distList, Integer.MAX_VALUE);
         distList[start] = 0;
 
-        PriorityQueue<Edge> pq = new PriorityQueue<>();
-        pq.add(new Edge(start, 0));
+        PriorityQueue<P4007_Edge> pq = new PriorityQueue<>();
+        pq.add(new P4007_Edge(start, 0));
 
         while(!pq.isEmpty()) {
             int current = pq.poll().vertex;
@@ -56,10 +56,10 @@ public class P4007_간담회_참석 {
             if(visited[current]) continue;
             visited[current] = true;
 
-            for (Edge next: graph.get(current)) {
+            for (P4007_Edge next: graph.get(current)) {
                 if (distList[next.vertex] > distList[current] + next.dist) {
                     distList[next.vertex] = distList[current] + next.dist;
-                    pq.add(new Edge(next.vertex, distList[next.vertex]));
+                    pq.add(new P4007_Edge(next.vertex, distList[next.vertex]));
                 }
             }
         }
@@ -72,17 +72,17 @@ public class P4007_간담회_참석 {
         return max;
     }
 }
-class Edge implements Comparable<Edge>{
+class P4007_Edge implements Comparable<P4007_Edge>{
     int vertex;
     int dist;
 
-    public Edge(int vertex, int dist){
+    public P4007_Edge(int vertex, int dist){
         this.vertex = vertex;
         this.dist = dist;
     }
 
     @Override
-    public int compareTo(Edge o) {
+    public int compareTo(P4007_Edge o) {
         return this.dist - o.dist;
     }
 }
