@@ -1,6 +1,6 @@
 func trap(height []int) int {
-	ans := make([]int, len(height))
-	top := 0
+    ans := make([]int, len(height))
+    top := 0
     
     for i := 0; i < len(height); i++ {
         if top > height[i] {
@@ -21,8 +21,7 @@ func trap(height []int) int {
             ans[i] = 0
         }
     }
-    
-	return sum(ans)
+    return sum(ans)
 }
 
 func sum(a []int) (ans int) {
